@@ -1,0 +1,138 @@
+
+<div class="w-full flex flex-col">
+    <h1 class="font-bold text-lg py-0" mat-dialog-title>Nuevo Estudiante</h1>
+
+    <hr class="py-0 my-0 mt-2">
+
+    <form class="flex flex-col p-4" #appForm="ngForm">
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>DNI</mat-label>
+            <input matInput required placeholder="Documento" id="dni" name="dni" [(ngModel)]="fieldForm.dni" autocomplete="off">
+            <mat-icon matPrefix>title</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>Tipo de Documento</mat-label>
+            <mat-select required placeholder="Tipo" id="dni_type" name="dni_type" [(ngModel)]="fieldForm.dni_type">
+                <mat-option value="160101">CUI</mat-option>
+                <mat-option value="160102">Pasaporte</mat-option>
+            </mat-select>
+            <mat-icon matPrefix>list</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>Nombre</mat-label>
+            <input matInput required placeholder="Nombre" id="name" name="name" [(ngModel)]="fieldForm.name" autocomplete="off">
+            <mat-icon matPrefix>title</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>Apellido</mat-label>
+            <input matInput required placeholder="Apellido" id="surname" name="surname" [(ngModel)]="fieldForm.surname" autocomplete="off">
+            <mat-icon matPrefix>title</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>Fecha de nacimiento</mat-label>
+            <input matInput type="date" required id="dob" name="dob" [(ngModel)]="fieldForm.dob" autocomplete="off">
+            <mat-icon matPrefix>title</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>Genero</mat-label>
+            <mat-select required placeholder="Tipo" id="gender" name="gender" [(ngModel)]="fieldForm.gender">
+                <mat-option value="160201">Masculino</mat-option>
+                <mat-option value="160202">Femenino</mat-option>
+            </mat-select>
+            <mat-icon matPrefix>list</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>Estado Civil</mat-label>
+            <mat-select required placeholder="Tipo" id="marital_status" name="marital_status" [(ngModel)]="fieldForm.marital_status">
+                <mat-option value="160300">Soltero</mat-option>
+                <mat-option value="160300">Casado</mat-option>
+                <mat-option value="160300">Viudo</mat-option>
+            </mat-select>
+            <mat-icon matPrefix>list</mat-icon>
+        </mat-form-field>
+
+        <div class="flex flex-col mb-3">
+            <mat-label>¿Es menor de Edad?</mat-label>
+            <mat-radio-group name="is_minor" [(ngModel)]="fieldForm.is_minor" required>
+                <mat-radio-button [value]="true">Sí</mat-radio-button>
+                <mat-radio-button [value]="false">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>País</mat-label>
+            <mat-select required placeholder="Tipo" id="address_country_iso" name="address_country_iso" [(ngModel)]="fieldForm.address_country_iso">
+                <mat-option value="160401">Guatemala</mat-option>
+                <mat-option value="160402">El Salvador</mat-option>
+                <mat-option value="160403">Honduras</mat-option>
+            </mat-select>
+            <mat-icon matPrefix>list</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>Departamento</mat-label>
+            <mat-select required placeholder="Tipo" id="address_local_state" name="address_local_state" [(ngModel)]="fieldForm.address_local_state">
+                <mat-option value="160501">Guatemala</mat-option>
+                <mat-option value="160502">Sacatepéquez</mat-option>
+                <mat-option value="160503">Chimaltenango</mat-option>
+            </mat-select>
+            <mat-icon matPrefix>list</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>Municipio</mat-label>
+            <mat-select required placeholder="Tipo" id="address_local_city" name="address_local_city" [(ngModel)]="fieldForm.address_local_city">
+                <mat-option value="160601">La Antigua Guatemala</mat-option>
+                <mat-option value="160602">Jocotenango</mat-option>
+                <mat-option value="160603">Ciudad Vieja</mat-option>
+            </mat-select>
+            <mat-icon matPrefix>list</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>Zona</mat-label>
+            <mat-select required placeholder="Tipo" id="address_local_zone" name="address_local_zone" [(ngModel)]="fieldForm.address_local_zone">
+                <mat-option value="160701">0</mat-option>
+                <mat-option value="160702">1</mat-option>
+                <mat-option value="160703">2</mat-option>
+            </mat-select>
+            <mat-icon matPrefix>list</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>Correo</mat-label>
+            <input matInput type="email" required placeholder="Correo" id="contact_email" name="contact_email" [(ngModel)]="fieldForm.contact_email" autocomplete="off">
+            <mat-icon matPrefix>title</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>Telefóno</mat-label>
+            <input matInput type="phone" required placeholder="Correo" id="contact_phone" name="contact_phone" [(ngModel)]="fieldForm.contact_phone" autocomplete="off">
+            <mat-icon matPrefix>title</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="fuse-mat-dense">
+            <mat-label>Tipo</mat-label>
+            <mat-select required placeholder="Tipo" id="type" name="type" [(ngModel)]="fieldForm.type">
+                <mat-option value="160801">Estudiante</mat-option>
+            </mat-select>
+            <mat-icon matPrefix>list</mat-icon>
+        </mat-form-field>        
+
+        <div class="w-full text-right">
+            <mat-dialog-actions class="flex justify-end">
+                <button mat-raised-button color="secondary" (click)="dialogRef.close()">Cancelar</button>
+                <button [disabled]="!appForm.valid" mat-raised-button (click)="add()" color="primary">Guardar</button>
+            </mat-dialog-actions>
+        </div>
+
+    </form>
+
+</div>

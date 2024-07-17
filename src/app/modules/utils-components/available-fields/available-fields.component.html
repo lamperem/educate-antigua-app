@@ -1,0 +1,14 @@
+<table class="w-full   avilable-fileds" >
+    <thead class="bg-gray-200 text-black">      
+        <tr>
+            <th class="py-2">Campo</th>
+            <th class="py-2">Incluir</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="bg-white border-b border-gray-200" *ngFor="let field of availableFields ">
+            <td class="py-2 pl-3 capitalize">{{field.input_label | titlecase}}</td>
+            <td class="py-2 pl-3 text-center"><mat-slide-toggle  color="primary" [disabled]="isMandatory(field.input_key)" [(ngModel)]="field.include" name="include" id="include" ></mat-slide-toggle></td>
+          </tr>
+    </tbody>
+  </table>

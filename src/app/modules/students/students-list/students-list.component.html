@@ -1,0 +1,29 @@
+<div class="w-full flex-col p-3">
+    <table class="table-auto w-full"> 
+        <thead >
+            <tr class="bg-gray-200 h-10 font-semibold">
+                <td class="pl-6">Codigo de Estudiante</td>
+                <td>Tipo</td>
+                <td>Fecha de creación</td>
+                <td>Estado</td>
+                <td></td>
+            </tr>  
+        </thead>
+
+        <tbody> 
+            <tr *ngFor="let student of studentsList$ | async" class="bg-white border-t h-10">
+                <td class="pl-6"> {{ student.code | uppercase }}</td>
+                <td>{{ student.type }}</td>
+                <td>{{ student.creation_date }}</td>
+                <td>{{ student.status }}</td>
+                <td>
+                    <div class="flex gap-3">
+                        <mat-icon class="cursor-pointer" (click)="edit(student)">edit</mat-icon>
+                        <mat-icon class="cursor-pointer" (click)="deleteField(student)">delete</mat-icon>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>    
+
+</div>

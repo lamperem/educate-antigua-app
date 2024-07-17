@@ -1,0 +1,34 @@
+
+<h2 mat-dialog-title>Agregar Nueva Ubicación</h2>
+
+
+<form  ngForm="locationForm">
+
+    <mat-dialog-content>
+
+        <mat-form-field class="fuse-mat-dense w-full">
+            <mat-label>Locación</mat-label>
+            <input 
+                matInput placeholder="Nombre de la nueva localidad"  
+                [(ngModel)]="this.location.location" 
+                name="location" 
+                id="location" >
+        </mat-form-field>
+    
+        <mat-form-field class="fusem-mat-dense w-full">
+            <mat-label>Dirección</mat-label>
+            <textarea matInput placeholder="Dirección de localiad"  id="direccion" name="direccion" [(ngModel)]="this.location.address_line" ></textarea>
+        </mat-form-field>
+        
+
+
+
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close>Cancelar</button>
+        <button mat-button  cdkFocusInitial (click)="addLocation()">Guardar</button>
+    </mat-dialog-actions>
+
+</form>
