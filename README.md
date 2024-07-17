@@ -1,4 +1,4 @@
-# Ticket Platform - Admin portal and Starter project for  the all in one ticketing platform
+# Courses Platform
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli)
 
